@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">GitHubApp</string>
+    <string name="title_home">首页</string>
+    <string name="title_dashboard">我的</string>
+    <string name="title_notifications">消息</string>
+    <string name="creat_at">创建于</string>
+    <string name="search_hint">请输入搜索关键字</string>
+
+    <style name="name_gaps"></style>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="str_search_history">搜索历史</string>
+</resources>

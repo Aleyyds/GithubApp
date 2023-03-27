@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_marginEnd="10dp"
+    android:layout_marginStart="5dp"
+    android:layout_height="30dp"
+    android:background="@color/white">
+
+
+    <TextView
+        android:backgroundTint="@color/grey_search"
+        android:background="@drawable/search_history"
+        android:paddingEnd="5dp"
+        android:paddingStart="5dp"
+        android:id="@+id/tv_history"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:maxWidth="180dp"
+        android:minWidth="40dp"
+        android:singleLine="true"
+        android:text="口碑炸裂的国产电影"
+        android:textColor="@color/grey_900"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
