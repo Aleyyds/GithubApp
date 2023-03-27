@@ -1,9 +1,7 @@
 package ale.ricardo.githubapp.views.adapter
 
-import ale.ricardo.githubapp.common.TAG
 import ale.ricardo.githubapp.databinding.ProfileReposCardBinding
 import ale.ricardo.githubapp.model.Repository
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.paging.PagingDataAdapter
@@ -20,7 +18,6 @@ class ProfileRepositoryAdapter :
         val repository = getItem(position)
 
         holder.binding.repository = repository
-        Log.d(TAG, "onBindViewHolder: ${repository?.stargazers_count}")
         holder.binding.owner = repository!!.owner
 
     }
@@ -28,7 +25,6 @@ class ProfileRepositoryAdapter :
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
 
         val binding = ProfileReposCardBinding.inflate(LayoutInflater.from(parent.context),parent,false)
-        Log.d(TAG, "onCreateViewHolder: 22222222222222222")
         return ViewHolder(binding)
     }
 
