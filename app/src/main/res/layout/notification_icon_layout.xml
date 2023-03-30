@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/notificationMotion"
+    android:layout_width="match_parent"
+
+    android:layout_height="match_parent"
+    android:background="?attr/selectableItemBackgroundBorderless"
+    app:layoutDescription="@xml/icon_layout_scene">
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/notification_icon_title" />
+
+    <androidx.constraintlayout.utils.widget.ImageFilterView
+        android:id="@+id/iv_profile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:altSrc="@drawable/notification_stroke"
+        app:srcCompat="@drawable/notification_stroke" />
+</androidx.constraintlayout.motion.widget.MotionLayout>

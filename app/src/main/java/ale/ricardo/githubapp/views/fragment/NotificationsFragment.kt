@@ -12,6 +12,8 @@ import ale.ricardo.githubapp.viewmodel.NotificationsViewModel
 import ale.ricardo.githubapp.views.adapter.NotificationAdapter
 import androidx.lifecycle.lifecycleScope
 import androidx.paging.LoadState
+import androidx.recyclerview.widget.ItemTouchHelper
+import androidx.recyclerview.widget.RecyclerView
 import com.scwang.smartrefresh.layout.api.RefreshLayout
 import com.scwang.smartrefresh.layout.listener.OnRefreshLoadMoreListener
 import kotlinx.coroutines.flow.collectLatest
@@ -44,6 +46,23 @@ class NotificationsFragment : Fragment(), OnRefreshLoadMoreListener {
         binding.recycle.adapter = adapter
 
         binding.smartRefreshLayout.setOnRefreshLoadMoreListener(this)
+
+        /**
+         * 滑动删除
+         * dragDir:拖动
+         * swipeDirs:滑动
+         */
+        ItemTouchHelper(object :ItemTouchHelper.SimpleCallback(0,ItemTouchHelper.END){
+            override fun onMove(recyclerView: RecyclerView, viewHolder: RecyclerView.ViewHolder, target: RecyclerView.ViewHolder): Boolean {
+                return false
+            }
+
+            override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
+                val commitModel = adapter.snapshot().toMutableList().get(direction)
+                
+            }
+        }).attachToRecyclerView(binding.recycle)
+
 
         lifecycleScope.launchWhenCreated {
             notificationsViewModel.fetchNotification().collectLatest {

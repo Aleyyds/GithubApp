@@ -10,4 +10,7 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="str_search_history">搜索历史</string>
+    <string name="home_icon_title">首页</string>
+    <string name="notification_icon_title">消息</string>
+    <string name="profile_icon_title">我的</string>
 </resources>
