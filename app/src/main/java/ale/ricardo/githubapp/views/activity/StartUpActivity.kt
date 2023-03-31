@@ -1,4 +1,4 @@
-package ale.ricardo.githubapp.views.ativity
+package ale.ricardo.githubapp.views.activity
 
 import ale.ricardo.githubapp.R
 import ale.ricardo.githubapp.databinding.ActivityStartUpBinding

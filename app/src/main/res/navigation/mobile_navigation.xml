@@ -44,4 +44,10 @@
             android:id="@+id/action_searchResultFragment_to_searchFragment"
             app:destination="@id/searchFragment" />
     </fragment>
+
+    <activity
+        android:id="@+id/webViewActivity"
+        android:name="ale.ricardo.githubapp.views.activity.WebViewActivity"
+        android:label="activity_web_view"
+        tools:layout="@layout/activity_web_view" />
 </navigation>

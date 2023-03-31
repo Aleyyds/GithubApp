@@ -1,12 +1,13 @@
 package ale.ricardo.githubapp.views.adapter
 
+import ale.ricardo.githubapp.R
 import ale.ricardo.githubapp.common.Utils
 import ale.ricardo.githubapp.databinding.HomeItemBinding
-import ale.ricardo.githubapp.databinding.SearchHistoryRecycleItemBinding
 import ale.ricardo.githubapp.model.Repository
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.core.view.get
+import androidx.navigation.findNavController
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
@@ -38,6 +39,13 @@ class HomeRecycleAdapter : PagingDataAdapter<Repository, HomeRecycleAdapter.View
 
 
         holder.binding.owner = repository?.owner
+
+
+        holder.binding.detailCard.setOnClickListener {
+            val bundle = Bundle()
+            bundle.putString("html_url",repository?.html_url)
+            holder.binding.root.findNavController().navigate(R.id.webViewActivity,bundle)
+        }
 
 
     }

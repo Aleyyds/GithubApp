@@ -1,6 +1,7 @@
 package ale.ricardo.githubapp.views.fragment
 
 import ale.ricardo.githubapp.R
+import ale.ricardo.githubapp.common.TAG
 import ale.ricardo.githubapp.databinding.FragmentHomeBinding
 import ale.ricardo.githubapp.viewmodel.HomeViewModel
 import ale.ricardo.githubapp.views.adapter.HomeRecycleAdapter
@@ -9,20 +10,23 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.adapters.SeekBarBindingAdapter.OnProgressChanged
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.NavController
+import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import androidx.paging.LoadState
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.scwang.smartrefresh.layout.api.RefreshLayout
 import com.scwang.smartrefresh.layout.listener.OnRefreshLoadMoreListener
+import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.collectLatest
 
 class HomeFragment : Fragment(), OnRefreshLoadMoreListener, View.OnClickListener {
 
-    private val TAG: String? = "Ricardo-log"
     private var _binding: FragmentHomeBinding? = null
     private lateinit var recycleAdapter: HomeRecycleAdapter
 
@@ -56,8 +60,11 @@ class HomeFragment : Fragment(), OnRefreshLoadMoreListener, View.OnClickListener
 
 
         lifecycleScope.launchWhenCreated {
-            homeViewModel.queryRepositoryByKey().collectLatest {
+            homeViewModel.queryRepositoryByKey().catch {
+                Log.e(TAG, "onViewCreated: error:$it")
+            }.collectLatest {
                 recycleAdapter.submitData(it)
+
             }
         }
 
@@ -104,7 +111,7 @@ class HomeFragment : Fragment(), OnRefreshLoadMoreListener, View.OnClickListener
                 }
             }
             R.id.editText ->{
-                findNavController().navigate(R.id.action_navigation_home_to_searchFragment)
+                findNavController().navigate(R.id.searchFragment)
             }
         }
     }

@@ -64,12 +64,12 @@ class SearchResultFragment : Fragment(), View.OnClickListener {
     override fun onClick(v: View?) {
         when(v?.id){
             R.id.iv_back ->{
-                navController.navigateUp()
+                navController.navigate(R.id.searchFragment)
             }
 
             R.id.editText ->{
                 mBinding.editText.setText("")
-                navController.navigate(R.id.action_searchResultFragment_to_searchFragment)
+                navController.navigate(R.id.searchFragment)
             }
         }
     }

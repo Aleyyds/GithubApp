@@ -1,20 +1,17 @@
 package ale.ricardo.githubapp.views.fragment
 
-import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import ale.ricardo.githubapp.R
 import ale.ricardo.githubapp.common.TAG
 import ale.ricardo.githubapp.databinding.FragmentSearchBinding
 import ale.ricardo.githubapp.viewmodel.HistoryViewModel
 import ale.ricardo.githubapp.views.adapter.HistoryListAdapter
+import android.os.Bundle
 import android.text.TextUtils
 import android.util.Log
-import android.view.Window
-import android.view.WindowManager
-import androidx.databinding.adapters.SearchViewBindingAdapter
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
@@ -34,7 +31,7 @@ class SearchFragment : Fragment(), View.OnClickListener {
 
 
     override fun onCreateView(
-            inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+            inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         mBinding = FragmentSearchBinding.inflate(layoutInflater)
 
         return mBinding.root
@@ -44,7 +41,6 @@ class SearchFragment : Fragment(), View.OnClickListener {
         super.onViewCreated(view, savedInstanceState)
         adapter = HistoryListAdapter()
         mBinding.recycle.adapter = adapter
-
 
         lifecycleScope.launchWhenCreated {
             historyViewModel.getAllSearchHistory().collectLatest {
@@ -65,7 +61,7 @@ class SearchFragment : Fragment(), View.OnClickListener {
     override fun onClick(v: View?) {
         when(v?.id){
             R.id.iv_back ->{
-                findNavController().navigate(R.id.action_searchFragment_to_navigation_home)
+                findNavController().navigate(R.id.navigation_home)
             }
             R.id.search_button ->{
                 val key =mBinding.editText.text?.trim()
@@ -76,7 +72,7 @@ class SearchFragment : Fragment(), View.OnClickListener {
                     }
                     val argument = Bundle()
                     argument.putString("key",key.toString())
-                    findNavController().navigate(R.id.action_searchFragment_to_searchResultFragment,argument)
+                    findNavController().navigate(R.id.searchResultFragment,argument)
                 }
 
             }

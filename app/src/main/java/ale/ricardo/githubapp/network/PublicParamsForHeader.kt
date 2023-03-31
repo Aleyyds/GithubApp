@@ -11,7 +11,7 @@ class PublicParamsForHeader : Interceptor {
         val request = chain.request().newBuilder()
             .addHeader("Accept", "application/vnd.github+json")
             .addHeader("Authorization", "Bearer $ACCESS_TOKEN")
-            .addHeader("X-GitHub-Api-Version", "2022-11-28")
+                .addHeader("X-GitHub-Api-Version", "2022-11-28")
             .build()
         return chain.proceed(addParam(request))
     }
