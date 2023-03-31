@@ -72,7 +72,7 @@ class SearchFragment : Fragment(), View.OnClickListener {
                     }
                     val argument = Bundle()
                     argument.putString("key",key.toString())
-                    findNavController().navigate(R.id.searchResultFragment,argument)
+                    findNavController().navigate(R.id.navigation_searchResultFragment,argument)
                 }
 
             }

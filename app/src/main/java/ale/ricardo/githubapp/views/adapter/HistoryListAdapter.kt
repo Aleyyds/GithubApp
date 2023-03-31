@@ -30,7 +30,7 @@ class HistoryListAdapter() : ListAdapter<SearchHistoryEntity, HistoryListAdapter
             tvHistory.setOnClickListener {
                 val argument = Bundle()
                 argument.putString("key",historyEntity.key)
-                holder.binding.root.findNavController().navigate(R.id.searchResultFragment,argument)
+                holder.binding.root.findNavController().navigate(R.id.navigation_searchResultFragment,argument)
             }
         }
 

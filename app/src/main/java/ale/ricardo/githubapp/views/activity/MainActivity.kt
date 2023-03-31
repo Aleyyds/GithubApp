@@ -59,7 +59,7 @@ class MainActivity : AppCompatActivity() {
 
             //隐藏导航栏
             when (destination.id) {
-                R.id.searchFragment,R.id.searchResultFragment ,R.id.webViewActivity-> {
+                R.id.navigation_searchFragment,R.id.navigation_searchResultFragment ,R.id.navigation_webViewActivity-> {
                     binding.bottomLinear.visibility = View.GONE
                 }
                 else ->{

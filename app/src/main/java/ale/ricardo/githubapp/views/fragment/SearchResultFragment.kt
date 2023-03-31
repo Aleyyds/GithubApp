@@ -9,7 +9,6 @@ import ale.ricardo.githubapp.R
 import ale.ricardo.githubapp.databinding.FragmentSearhResultBinding
 import ale.ricardo.githubapp.viewmodel.HomeViewModel
 import ale.ricardo.githubapp.views.adapter.HomeRecycleAdapter
-import android.widget.EditText
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.NavController
@@ -64,12 +63,12 @@ class SearchResultFragment : Fragment(), View.OnClickListener {
     override fun onClick(v: View?) {
         when(v?.id){
             R.id.iv_back ->{
-                navController.navigate(R.id.searchFragment)
+                navController.navigate(R.id.navigation_searchFragment)
             }
 
             R.id.editText ->{
                 mBinding.editText.setText("")
-                navController.navigate(R.id.searchFragment)
+                navController.navigate(R.id.navigation_searchFragment)
             }
         }
     }

@@ -12,7 +12,7 @@
         tools:layout="@layout/fragment_home" >
         <action
             android:id="@+id/action_navigation_home_to_searchFragment"
-            app:destination="@id/searchFragment" />
+            app:destination="@id/navigation_searchFragment" />
     </fragment>
 
     <fragment
@@ -25,7 +25,7 @@
         android:name="ale.ricardo.githubapp.views.fragment.MineFragment"
         android:label="MineFragment" />
     <fragment
-        android:id="@+id/searchFragment"
+        android:id="@+id/navigation_searchFragment"
         android:name="ale.ricardo.githubapp.views.fragment.SearchFragment"
         android:label="fragment_search"
         tools:layout="@layout/fragment_search" >
@@ -34,19 +34,19 @@
             app:destination="@id/navigation_home" />
         <action
             android:id="@+id/action_searchFragment_to_searchResultFragment"
-            app:destination="@id/searchResultFragment" />
+            app:destination="@id/navigation_searchResultFragment" />
     </fragment>
     <fragment
-        android:id="@+id/searchResultFragment"
+        android:id="@+id/navigation_searchResultFragment"
         android:name="ale.ricardo.githubapp.views.fragment.SearchResultFragment"
         android:label="SearchResultFragment" >
         <action
             android:id="@+id/action_searchResultFragment_to_searchFragment"
-            app:destination="@id/searchFragment" />
+            app:destination="@id/navigation_searchFragment" />
     </fragment>
 
     <activity
-        android:id="@+id/webViewActivity"
+        android:id="@+id/navigation_webViewActivity"
         android:name="ale.ricardo.githubapp.views.activity.WebViewActivity"
         android:label="activity_web_view"
         tools:layout="@layout/activity_web_view" />

@@ -10,13 +10,9 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.databinding.adapters.SeekBarBindingAdapter.OnProgressChanged
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
-import androidx.navigation.NavController
-import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import androidx.paging.LoadState
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -111,7 +107,7 @@ class HomeFragment : Fragment(), OnRefreshLoadMoreListener, View.OnClickListener
                 }
             }
             R.id.editText ->{
-                findNavController().navigate(R.id.searchFragment)
+                findNavController().navigate(R.id.navigation_searchFragment)
             }
         }
     }

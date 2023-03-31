@@ -44,7 +44,7 @@ class HomeRecycleAdapter : PagingDataAdapter<Repository, HomeRecycleAdapter.View
         holder.binding.detailCard.setOnClickListener {
             val bundle = Bundle()
             bundle.putString("html_url",repository?.html_url)
-            holder.binding.root.findNavController().navigate(R.id.webViewActivity,bundle)
+            holder.binding.root.findNavController().navigate(R.id.navigation_webViewActivity,bundle)
         }
 
 
